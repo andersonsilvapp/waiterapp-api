@@ -7,6 +7,11 @@ export const Category = model('Category', new Schema({
   },
   icon: {
     type: String,
-    required: true
+    required: true,
+  },
+  isActive: {
+    type: Boolean,
+    required: true,
+    default: true,
   },
 }));

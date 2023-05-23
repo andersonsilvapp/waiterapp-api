@@ -16,6 +16,7 @@ import { editProduct } from './app/useCases/products/editProduct';
 import { deleteProduct } from './app/useCases/products/deleteProduct';
 import { editProductPrice } from './app/useCases/products/editProductPrice';
 import { editProductStatus } from './app/useCases/products/editProductStatus copy';
+import { editCategory } from './app/useCases/categories/editCategory';
 
 export const router = Router();
 
@@ -35,6 +36,9 @@ router.get('/categories', listCategories);
 
 // Create Category
 router.post('/categories', createCategory);
+
+// Create Category
+router.put('/categories/:categoryId', editCategory);
 
 // List Products
 router.get('/products', listProducts);
