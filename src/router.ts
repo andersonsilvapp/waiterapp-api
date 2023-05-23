@@ -40,6 +40,9 @@ router.get('/products', listProducts);
 // Create Product
 router.post('/products', upload.single('image'), createProducts);
 
+// Edit Product
+router.put('/products/:productId', upload.single('image'), editProduct);
+
 // Remove Product
 router.delete('/products/:productId', deleteProduct);
 
