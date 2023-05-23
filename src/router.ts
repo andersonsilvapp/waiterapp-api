@@ -12,6 +12,8 @@ import { listOrders } from './app/useCases/orders/listOrders';
 import { createOrder } from './app/useCases/orders/createOrder';
 import { changeOrderStatus } from './app/useCases/orders/changeOrderStatus';
 import { cancelOrder } from './app/useCases/orders/cancelOrder';
+import { editProduct } from './app/useCases/products/editProduct';
+import { deleteProduct } from './app/useCases/products/deleteProduct';
 
 export const router = Router();
 
@@ -37,6 +39,9 @@ router.get('/products', listProducts);
 
 // Create Product
 router.post('/products', upload.single('image'), createProducts);
+
+// Remove Product
+router.delete('/products/:productId', deleteProduct);
 
 // Get products by category
 router.get('/categories/:categoryId/products', listProductsByCategories);
