@@ -18,6 +18,7 @@ import { editProductPrice } from './app/useCases/products/editProductPrice';
 import { editProductStatus } from './app/useCases/products/editProductStatus copy';
 import { editCategory } from './app/useCases/categories/editCategory';
 import { deleteCategory } from './app/useCases/categories/deleteCategory';
+import { editCategoryStatus } from './app/useCases/categories/editCategoryStatus';
 
 export const router = Router();
 
@@ -40,6 +41,9 @@ router.post('/categories', createCategory);
 
 // Edit Category
 router.put('/categories/:categoryId', editCategory);
+
+// Edit Category Status
+router.patch('/categories/:categoryId/status', editCategoryStatus);
 
 // Remove Category
 router.delete('/categories/:categoryId', deleteCategory);
