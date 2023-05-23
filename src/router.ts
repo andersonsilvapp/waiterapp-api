@@ -15,7 +15,7 @@ import { cancelOrder } from './app/useCases/orders/cancelOrder';
 import { editProduct } from './app/useCases/products/editProduct';
 import { deleteProduct } from './app/useCases/products/deleteProduct';
 import { editProductPrice } from './app/useCases/products/editProductPrice';
-import { editProductStatus } from './app/useCases/products/editProductStatus copy';
+import { editProductStatus } from './app/useCases/products/editProductStatus';
 import { editCategory } from './app/useCases/categories/editCategory';
 import { deleteCategory } from './app/useCases/categories/deleteCategory';
 import { editCategoryStatus } from './app/useCases/categories/editCategoryStatus';
