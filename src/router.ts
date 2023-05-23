@@ -15,6 +15,7 @@ import { cancelOrder } from './app/useCases/orders/cancelOrder';
 import { editProduct } from './app/useCases/products/editProduct';
 import { deleteProduct } from './app/useCases/products/deleteProduct';
 import { editProductPrice } from './app/useCases/products/editProductPrice';
+import { editProductStatus } from './app/useCases/products/editProductStatus copy';
 
 export const router = Router();
 
@@ -46,6 +47,9 @@ router.put('/products/:productId', upload.single('image'), editProduct);
 
 // Edit Product Price
 router.patch('/products/:productId/price',  editProductPrice);
+
+// Edit Product status
+router.patch('/products/:productId/status',  editProductStatus);
 
 // Remove Product
 router.delete('/products/:productId', deleteProduct);
