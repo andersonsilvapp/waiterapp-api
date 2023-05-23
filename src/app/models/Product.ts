@@ -17,6 +17,11 @@ export const Product = model('Product', new Schema({
     type: Number,
     required: true
   },
+  isActive: {
+    type: Boolean,
+    required: true,
+    default: true
+  },
   ingredients: {
     required: true,
     type: [{
