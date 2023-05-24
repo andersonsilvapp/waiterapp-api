@@ -19,6 +19,10 @@ import { editProductStatus } from './app/useCases/products/editProductStatus';
 import { editCategory } from './app/useCases/categories/editCategory';
 import { deleteCategory } from './app/useCases/categories/deleteCategory';
 import { editCategoryStatus } from './app/useCases/categories/editCategoryStatus';
+import { createUser } from './app/useCases/users/createUser';
+import { authenticateUser } from './app/useCases/users/authenticateUser';
+import { privateRoute } from './app/useCases/users/privateRoute';
+import { checkToken } from './app/middlewares/checkToken';
 
 export const router = Router();
 
@@ -32,6 +36,15 @@ const upload = multer({
     }
   }),
 });
+
+// Register User
+router.post('/auth/register', createUser);
+
+// Register User
+router.post('/auth/login', authenticateUser);
+
+// Private Route
+router.get('/user/:id', checkToken, privateRoute);
 
 // List Catgories
 router.get('/categories', listCategories);
