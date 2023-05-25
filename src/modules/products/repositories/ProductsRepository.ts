@@ -22,10 +22,27 @@ class ProductsRepository {
     return product;
   }
 
-  async delete( productId: string) {
+  async delete(productId: string) {
     await Product.findByIdAndDelete(productId);
 
     return;
+  }
+
+  async update(productId: string, { name,
+    description,
+    imagePath,
+    price,
+    category,
+    ingredients }: ICreateProductDTO) {
+
+    const product = await Product.findByIdAndUpdate(productId, { name,
+      description,
+      imagePath,
+      price,
+      category,
+      ingredients }, { new: true });
+
+    return product;
   }
 }
 
