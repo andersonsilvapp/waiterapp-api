@@ -15,9 +15,11 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
+      "prettier/prettier": "error",
         "indent": [
             "error",
             2
