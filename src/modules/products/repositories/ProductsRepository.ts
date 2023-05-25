@@ -3,6 +3,12 @@ import { Product } from '../infra/mongoose/models/Product';
 import { ICreateProductDTO } from '../dtos/ICreateProductDTO';
 
 class ProductsRepository {
+  async list() {
+    const products = await Product.find();
+
+    return products;
+  }
+
   async create({ name,
     description,
     imagePath,
