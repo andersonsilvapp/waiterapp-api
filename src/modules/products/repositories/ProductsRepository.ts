@@ -44,6 +44,12 @@ class ProductsRepository {
 
     return product;
   }
+
+  async updatePrice(productId: string, price: number) {
+    const product = await Product.findByIdAndUpdate(productId, { price }, { new: true });
+
+    return product;
+  }
 }
 
 const productsRepository = new ProductsRepository();
