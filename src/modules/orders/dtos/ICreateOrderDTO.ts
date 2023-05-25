@@ -3,7 +3,7 @@ interface ICreateOrderDTO {
   products: {
     product: string;
     quantity: number;
-  }[]
+  }[];
 }
 
 export { ICreateOrderDTO };

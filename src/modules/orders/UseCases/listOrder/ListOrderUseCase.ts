@@ -2,7 +2,6 @@ import { ordersRepository } from '../../infra/mongoose/repositories/OrdersReposi
 
 class ListOrderUseCase {
   async execute() {
-
     const orders = await ordersRepository.list();
 
     return orders;

@@ -15,17 +15,25 @@ const upload = multer({
     },
     filename(req, file, callback) {
       callback(null, `${Date.now()}-${file.originalname}`);
-    }
+    },
   }),
 });
 
 const productsRoutes = Router();
 
-productsRoutes.post('/', upload.single('image'),  createProductController.handle);
+productsRoutes.post(
+  '/',
+  upload.single('image'),
+  createProductController.handle
+);
 
 productsRoutes.get('/', listProductController.handle);
 
-productsRoutes.put('/:productId', upload.single('image'), editProductController.handle);
+productsRoutes.put(
+  '/:productId',
+  upload.single('image'),
+  editProductController.handle
+);
 
 productsRoutes.patch('/:productId/price', editProductPriceController.handle);
 

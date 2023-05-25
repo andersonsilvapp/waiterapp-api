@@ -9,13 +9,14 @@ class ProductsRepository {
     return products;
   }
 
-  async create({ name,
+  async create({
+    name,
     description,
     imagePath,
     price,
     category,
-    ingredients }: ICreateProductDTO) {
-
+    ingredients,
+  }: ICreateProductDTO) {
     const product = await Product.create({
       name,
       description,
@@ -34,31 +35,42 @@ class ProductsRepository {
     return;
   }
 
-  async update(productId: string, { name,
-    description,
-    imagePath,
-    price,
-    category,
-    ingredients }: ICreateProductDTO) {
-
-    const product = await Product.findByIdAndUpdate(productId, { name,
+  async update(
+    productId: string,
+    {
+      name,
       description,
       imagePath,
       price,
       category,
-      ingredients }, { new: true });
+      ingredients,
+    }: ICreateProductDTO
+  ) {
+    const product = await Product.findByIdAndUpdate(
+      productId,
+      { name, description, imagePath, price, category, ingredients },
+      { new: true }
+    );
 
     return product;
   }
 
   async updatePrice(productId: string, price: number) {
-    const product = await Product.findByIdAndUpdate(productId, { price }, { new: true });
+    const product = await Product.findByIdAndUpdate(
+      productId,
+      { price },
+      { new: true }
+    );
 
     return product;
   }
 
   async updateStatus(productId: string, isActive: boolean) {
-    const product = await Product.findByIdAndUpdate(productId, { isActive }, { new: true });
+    const product = await Product.findByIdAndUpdate(
+      productId,
+      { isActive },
+      { new: true }
+    );
 
     return product;
   }

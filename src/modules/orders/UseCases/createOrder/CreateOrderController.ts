@@ -13,5 +13,4 @@ class CreateOrderController {
 
 const createOrderController = new CreateOrderController();
 
-export { createOrderController};
-
+export { createOrderController };

@@ -10,7 +10,6 @@ class OrdersRepository {
   }
 
   async create({ table, products }: ICreateOrderDTO) {
-
     const order = await Order.create({ table, products });
     const orderDetails = await order.populate('products.product');
 
@@ -24,7 +23,11 @@ class OrdersRepository {
   }
 
   async updateStatus(orderId: string, status: boolean) {
-    const product = await Order.findByIdAndUpdate(orderId, { status }, { new: true });
+    const product = await Order.findByIdAndUpdate(
+      orderId,
+      { status },
+      { new: true }
+    );
 
     return product;
   }

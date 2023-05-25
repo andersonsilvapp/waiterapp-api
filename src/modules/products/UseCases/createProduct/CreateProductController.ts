@@ -4,11 +4,21 @@ import { createProductUseCase } from './CreateProductUseCase';
 class CreateProductController {
   async handle(request: Request, response: Response) {
     const imagePath = request.file?.filename || '';
-    const {name, description, price, category, ingredients} = request.body;
+    const { name, description, price, category, ingredients } = request.body;
 
-    console.log({name, description, price, category, ingredients}, 'Controller ==========>');
+    console.log(
+      { name, description, price, category, ingredients },
+      'Controller ==========>'
+    );
 
-    const product = await createProductUseCase.execute({ name, description, imagePath, price, category, ingredients });
+    const product = await createProductUseCase.execute({
+      name,
+      description,
+      imagePath,
+      price,
+      category,
+      ingredients,
+    });
 
     return response.json(product);
   }
@@ -16,5 +26,4 @@ class CreateProductController {
 
 const createProductController = new CreateProductController();
 
-export { createProductController};
-
+export { createProductController };

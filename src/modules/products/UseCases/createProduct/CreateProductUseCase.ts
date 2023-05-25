@@ -10,19 +10,22 @@ interface IRequest {
 }
 
 class CreateProductUseCase {
-  async execute({ name,
+  async execute({
+    name,
     description,
     imagePath,
     price,
     category,
-    ingredients }: IRequest) {
-
-    const product = await productsRepository.create({ name,
+    ingredients,
+  }: IRequest) {
+    const product = await productsRepository.create({
+      name,
       description,
       imagePath,
       price,
       category,
-      ingredients });
+      ingredients,
+    });
 
     return product;
   }

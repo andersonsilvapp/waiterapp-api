@@ -13,4 +13,3 @@ class ListCategoryController {
 const listCategoryController = new ListCategoryController();
 
 export { listCategoryController };
-

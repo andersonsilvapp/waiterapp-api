@@ -15,4 +15,3 @@ class CancelOrderController {
 const cancelOrderController = new CancelOrderController();
 
 export { cancelOrderController };
-

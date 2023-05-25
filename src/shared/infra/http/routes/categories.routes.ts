@@ -15,10 +15,16 @@ categoriesRoutes.get('/', listCategoryController.handle);
 
 categoriesRoutes.put('/:categoryId', editCategoryController.handle);
 
-categoriesRoutes.patch('/:categoryId/status', editCategoryStatusController.handle);
+categoriesRoutes.patch(
+  '/:categoryId/status',
+  editCategoryStatusController.handle
+);
 
 categoriesRoutes.delete('/:categoryId', deleteCategoryController.handle);
 
-categoriesRoutes.get('/:categoryId/products', listProductByCategoryController.handle);
+categoriesRoutes.get(
+  '/:categoryId/products',
+  listProductByCategoryController.handle
+);
 
 export { categoriesRoutes };

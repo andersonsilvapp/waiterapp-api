@@ -11,4 +11,3 @@ class EditOrderStatusUseCase {
 const editOrderStatusUseCase = new EditOrderStatusUseCase();
 
 export { editOrderStatusUseCase };
-

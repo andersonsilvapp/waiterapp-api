@@ -12,5 +12,4 @@ class ListProductController {
 
 const listProductController = new ListProductController();
 
-export { listProductController};
-
+export { listProductController };

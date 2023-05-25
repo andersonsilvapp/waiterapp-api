@@ -6,8 +6,7 @@ interface IRequest {
 }
 class CreateCategoriesUseCase {
   async execute({ name, icon }: IRequest) {
-
-    const category = await categoriesRepository.create({ name, icon});
+    const category = await categoriesRepository.create({ name, icon });
 
     return category;
   }

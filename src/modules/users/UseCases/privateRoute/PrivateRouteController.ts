@@ -8,8 +8,8 @@ class PrivateRouteController {
 
     const user = await usersRepository.getUserById(id);
 
-    if(!user) {
-      return response.status(404).json({ msg: 'Usuário não encontrado!'});
+    if (!user) {
+      return response.status(404).json({ msg: 'Usuário não encontrado!' });
     }
 
     response.status(200).json({ user });

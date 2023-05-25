@@ -14,4 +14,4 @@ class ListProductByCategoryController {
 
 const listProductByCategoryController = new ListProductByCategoryController();
 
-export { listProductByCategoryController};
+export { listProductByCategoryController };

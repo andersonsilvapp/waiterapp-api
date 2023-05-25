@@ -14,5 +14,4 @@ class EditProductStatusController {
 
 const editProductStatusController = new EditProductStatusController();
 
-export { editProductStatusController};
-
+export { editProductStatusController };

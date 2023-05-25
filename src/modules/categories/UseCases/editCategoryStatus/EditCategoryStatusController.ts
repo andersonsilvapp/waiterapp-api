@@ -7,7 +7,10 @@ class EditCategoryStatusController {
     const { categoryId } = request.params;
     const { isActive } = request.body;
 
-    const category = await editCategoryStatusUseCase.execute(categoryId, isActive);
+    const category = await editCategoryStatusUseCase.execute(
+      categoryId,
+      isActive
+    );
 
     return response.status(201).json(category);
   }

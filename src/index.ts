@@ -14,7 +14,8 @@ const app = express();
 const server = http.createServer(app);
 export const io = new Server(server);
 
-mongoose.connect('mongodb://localhost:27017')
+mongoose
+  .connect('mongodb://localhost:27017')
   .then(() => {
     const port = 3001;
 
@@ -30,7 +31,10 @@ mongoose.connect('mongodb://localhost:27017')
       next();
     });
 
-    app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
+    app.use(
+      '/uploads',
+      express.static(path.resolve(__dirname, '..', 'uploads'))
+    );
     app.use(express.json());
     app.use(router);
 
@@ -39,6 +43,3 @@ mongoose.connect('mongodb://localhost:27017')
     });
   })
   .catch(() => console.log('Erro ao conectar no mongodb'));
-
-
-

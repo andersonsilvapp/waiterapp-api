@@ -12,5 +12,4 @@ class ListOrderController {
 
 const listOrderController = new ListOrderController();
 
-export { listOrderController};
-
+export { listOrderController };

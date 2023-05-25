@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 import { EditCategoryUseCase } from '../editCategory/EditCategoryUseCase';
 
-const editCategoryUseCase =  new EditCategoryUseCase();
+const editCategoryUseCase = new EditCategoryUseCase();
 
 class EditCategoryController {
   async handle(request: Request, response: Response) {
@@ -18,4 +18,3 @@ class EditCategoryController {
 const editCategoryController = new EditCategoryController();
 
 export { editCategoryController };
-

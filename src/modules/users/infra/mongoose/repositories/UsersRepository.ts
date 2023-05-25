@@ -4,7 +4,6 @@ import { User } from '../models/User';
 
 class UsersRepository {
   async create({ name, email, password }: ICreateUserDTO) {
-
     const user = await User.create({ name, email, password });
 
     return user;

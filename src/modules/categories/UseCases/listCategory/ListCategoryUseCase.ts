@@ -6,7 +6,6 @@ class ListCategoryUseCase {
 
     return categories;
   }
-
 }
 
 const listCategoryUseCase = new ListCategoryUseCase();

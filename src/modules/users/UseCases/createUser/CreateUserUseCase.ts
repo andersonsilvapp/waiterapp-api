@@ -10,11 +10,14 @@ interface IRequest {
 
 class CreateUserUseCase {
   async execute({ name, email, password }: IRequest) {
-
     const salt = await bcrypt.genSalt(12);
     const passwordHash = await bcrypt.hash(password, salt);
 
-    const user = await usersRepository.create({ name, email, password: passwordHash });
+    const user = await usersRepository.create({
+      name,
+      email,
+      password: passwordHash,
+    });
 
     return user;
   }

@@ -11,4 +11,3 @@ class EditCategoryStatusUseCase {
 const editCategoryStatusUseCase = new EditCategoryStatusUseCase();
 
 export { editCategoryStatusUseCase };
-

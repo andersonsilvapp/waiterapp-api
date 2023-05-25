@@ -13,5 +13,4 @@ class DeleteProductController {
 
 const deleteProductController = new DeleteProductController();
 
-export { deleteProductController};
-
+export { deleteProductController };
