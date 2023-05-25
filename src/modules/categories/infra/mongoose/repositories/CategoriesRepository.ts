@@ -13,6 +13,12 @@ class CategoriesRepository {
 
     return true;
   }
+
+  async update( categoryId: string, name: string, icon: string ) {
+    const category = await Category.findByIdAndUpdate(categoryId, { name, icon }, { new: true });
+
+    return category;
+  }
 }
 
 export { CategoriesRepository};
