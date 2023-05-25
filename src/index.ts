@@ -6,14 +6,13 @@ import mongoose from 'mongoose';
 import * as dotenv from 'dotenv';
 import { Server } from 'socket.io';
 
-import { router } from './router';
+import { router } from './shared/infra/http/routes';
 
 dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
 export const io = new Server(server);
-
 
 mongoose.connect('mongodb://localhost:27017')
   .then(() => {
