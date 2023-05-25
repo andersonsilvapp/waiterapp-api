@@ -15,5 +15,7 @@ class EditCategoryController {
   }
 }
 
-export { EditCategoryController };
+const editCategoryController = new EditCategoryController();
+
+export { editCategoryController };
 

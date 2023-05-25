@@ -14,4 +14,6 @@ class DeleteCategoryController {
   }
 }
 
-export { DeleteCategoryController };
+const deleteCategoryController = new DeleteCategoryController();
+
+export { deleteCategoryController };

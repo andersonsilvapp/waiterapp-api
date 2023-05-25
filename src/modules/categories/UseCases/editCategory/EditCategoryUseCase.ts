@@ -1,6 +1,4 @@
-import { CategoriesRepository } from '../../infra/mongoose/repositories/CategoriesRepository';
-
-const categoriesRepository = new CategoriesRepository();
+import { categoriesRepository } from '../../infra/mongoose/repositories/CategoriesRepository';
 
 class EditCategoryUseCase {
   async execute( categoryId: string, name: string, icon: string ) {

@@ -14,4 +14,6 @@ class CreateCategoriesController {
   }
 }
 
-export { CreateCategoriesController };
+const createCategoriesController = new CreateCategoriesController();
+
+export { createCategoriesController };

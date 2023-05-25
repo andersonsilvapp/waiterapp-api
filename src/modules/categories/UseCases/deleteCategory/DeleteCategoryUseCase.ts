@@ -1,10 +1,8 @@
-import { CategoriesRepository } from '../../infra/mongoose/repositories/CategoriesRepository';
-
-const categoryRepository = new CategoriesRepository();
+import { categoriesRepository } from '../../infra/mongoose/repositories/CategoriesRepository';
 
 class DeleteCategoryUseCase {
   async execute( categoryId: string ) {
-    await categoryRepository.delete(categoryId);
+    await categoriesRepository.delete(categoryId);
 
     return true;
   }
