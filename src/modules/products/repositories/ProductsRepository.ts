@@ -50,6 +50,12 @@ class ProductsRepository {
 
     return product;
   }
+
+  async updateStatus(productId: string, isActive: boolean) {
+    const product = await Product.findByIdAndUpdate(productId, { isActive }, { new: true });
+
+    return product;
+  }
 }
 
 const productsRepository = new ProductsRepository();
