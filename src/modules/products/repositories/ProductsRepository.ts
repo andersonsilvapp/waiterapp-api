@@ -21,6 +21,12 @@ class ProductsRepository {
 
     return product;
   }
+
+  async delete( productId: string) {
+    await Product.findByIdAndDelete(productId);
+
+    return;
+  }
 }
 
 const productsRepository = new ProductsRepository();
