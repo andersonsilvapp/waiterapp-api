@@ -19,6 +19,14 @@ class CategoriesRepository {
 
     return category;
   }
+
+  async updateStatus( categoryId: string, status: boolean ) {
+    const category = await Category.findByIdAndUpdate(categoryId, { isActive: status }, { new: true });
+
+    return category;
+  }
 }
 
-export { CategoriesRepository};
+const categoriesRepository = new CategoriesRepository();
+
+export { categoriesRepository };
