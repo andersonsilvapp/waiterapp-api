@@ -7,6 +7,12 @@ class CategoriesRepository {
 
     return category;
   }
+
+  async delete( categoryId: string ) {
+    await Category.findByIdAndDelete(categoryId);
+
+    return true;
+  }
 }
 
 export { CategoriesRepository};
