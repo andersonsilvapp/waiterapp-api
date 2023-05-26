@@ -30,13 +30,13 @@ class AuthenticateUserUseCase {
     const user = await usersRepository.getUserByEmail(email);
 
     if (!user) {
-      throw new AppError('Email ou senha inválida!', 404);
+      throw new AppError('Email ou senha inválida!', 401);
     }
 
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new AppError('Email ou senha inválida!', 404);
+      throw new AppError('Email ou senha inválida!', 401);
     }
 
     const secret = process.env.SECRET;
@@ -46,7 +46,7 @@ class AuthenticateUserUseCase {
         id: user._id,
       },
       secret!,
-      { expiresIn: 2000 }
+      { expiresIn: '1d' }
     );
 
     const tokenReturn: IResponse = {

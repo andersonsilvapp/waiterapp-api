@@ -11,6 +11,8 @@ usersRoutes.post('/register', createUserController.handle);
 
 usersRoutes.post('/login', authenticateUserController.handle);
 
-usersRoutes.get('/user/:id', validateToken, privateRouteController.handle);
+usersRoutes.use(validateToken);
+
+usersRoutes.get('/user/:id', privateRouteController.handle);
 
 export { usersRoutes };
