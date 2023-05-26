@@ -16,13 +16,11 @@ class OrdersRepository {
     return orderDetails;
   }
 
-  async delete(orderId: string) {
+  async delete(orderId: string): Promise<void> {
     await Order.findByIdAndDelete(orderId);
-
-    return;
   }
 
-  async updateStatus(orderId: string, status: boolean) {
+  async updateStatus(orderId: string, status: string) {
     const product = await Order.findByIdAndUpdate(
       orderId,
       { status },

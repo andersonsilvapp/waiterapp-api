@@ -16,7 +16,7 @@ class EditProductController {
       ingredients,
     });
 
-    return response.json(product);
+    return response.status(201).json(product);
   }
 }
 

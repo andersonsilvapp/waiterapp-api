@@ -8,7 +8,7 @@ class EditProductStatusController {
 
     const product = await editProductStatusUseCase.execute(productId, isActive);
 
-    return response.json(product);
+    return response.status(201).json(product);
   }
 }
 

@@ -29,10 +29,8 @@ class ProductsRepository {
     return product;
   }
 
-  async delete(productId: string) {
+  async delete(productId: string): Promise<void> {
     await Product.findByIdAndDelete(productId);
-
-    return;
   }
 
   async update(

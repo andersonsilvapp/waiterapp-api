@@ -1,23 +1,23 @@
 import { NextFunction, Request, Response } from 'express';
-import jwt from 'jsonwebtoken';
+import { verify } from 'jsonwebtoken';
+import { AppError } from '../../../errors/AppError';
 
-export function checkToken(req: Request, res: Response, next: NextFunction) {
+export function validateToken(req: Request, res: Response, next: NextFunction) {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
 
   if (!token) {
-    return res.status(401).json({ msg: 'Acesso negado!' });
+    throw new AppError('Acesso negado!');
   }
 
   try {
     const secret = process.env.SECRET;
 
     if (!secret) return;
-
-    jwt.verify(token, secret);
+    verify(token, secret);
 
     next();
   } catch (error) {
-    res.status(400).json({ msg: 'Token inválido' });
+    throw new AppError('Token inválido!');
   }
 }

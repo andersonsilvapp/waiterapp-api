@@ -3,8 +3,6 @@ import { ordersRepository } from '../../infra/mongoose/repositories/OrdersReposi
 class CancelOrderUseCase {
   async execute(orderId: string) {
     await ordersRepository.delete(orderId);
-
-    return;
   }
 }
 

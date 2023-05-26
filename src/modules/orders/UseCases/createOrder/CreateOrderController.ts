@@ -7,7 +7,7 @@ class CreateOrderController {
 
     const order = await createOrderUseCase.execute({ table, products });
 
-    return response.json(order);
+    return response.status(201).json(order);
   }
 }
 

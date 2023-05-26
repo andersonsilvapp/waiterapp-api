@@ -6,11 +6,6 @@ class CreateProductController {
     const imagePath = request.file?.filename || '';
     const { name, description, price, category, ingredients } = request.body;
 
-    console.log(
-      { name, description, price, category, ingredients },
-      'Controller ==========>'
-    );
-
     const product = await createProductUseCase.execute({
       name,
       description,
@@ -20,7 +15,7 @@ class CreateProductController {
       ingredients,
     });
 
-    return response.json(product);
+    return response.status(201).json(product);
   }
 }
 

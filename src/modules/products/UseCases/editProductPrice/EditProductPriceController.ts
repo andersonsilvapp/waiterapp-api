@@ -8,7 +8,7 @@ class EditProductPriceController {
 
     const product = await editProductPriceUseCase.execute(productId, price);
 
-    return response.json(product);
+    return response.status(201).json(product);
   }
 }
 

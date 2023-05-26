@@ -21,10 +21,8 @@ class CategoriesRepository {
     return category;
   }
 
-  async delete(categoryId: string) {
+  async delete(categoryId: string): Promise<void> {
     await Category.findByIdAndDelete(categoryId);
-
-    return true;
   }
 
   async update(categoryId: string, name: string, icon: string) {
