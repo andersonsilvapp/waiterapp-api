@@ -1,4 +1,5 @@
 import { ordersRepository } from '../../infra/mongoose/repositories/OrdersRepository';
+import { io } from '../../../..';
 
 interface IRequest {
   table: string;
@@ -11,6 +12,8 @@ interface IRequest {
 class CreateOrderUseCase {
   async execute({ table, products }: IRequest) {
     const order = await ordersRepository.create({ table, products });
+
+    io.emit('orders@new', order);
 
     return order;
   }
