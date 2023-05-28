@@ -4,7 +4,9 @@ import { ICreateOrderDTO } from '../../../dtos/ICreateOrderDTO';
 
 class OrdersRepository {
   async list() {
-    const orders = await Order.find();
+    const orders = await Order.find()
+      .sort({ createdAt: -1 })
+      .populate('products.product');
 
     return orders;
   }
