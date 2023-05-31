@@ -2,6 +2,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import path from 'node:path';
 import http from 'node:http';
+import cors from 'cors';
 
 import mongoose from 'mongoose';
 import * as dotenv from 'dotenv';
@@ -24,6 +25,8 @@ mongoose
     io.on('connect', () => {
       console.log('Conectou');
     });
+
+    app.use(cors());
 
     app.use((req, res, next) => {
       res.setHeader('Access-Control-Allow-Origin', '*');
