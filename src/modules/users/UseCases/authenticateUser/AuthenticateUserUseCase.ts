@@ -20,23 +20,23 @@ interface IResponse {
 class AuthenticateUserUseCase {
   async execute({ email, password }: IRequest) {
     if (!email) {
-      throw new AppError('O email é obrigatório!');
+      throw new AppError('O email é obrigatório!', 401);
     }
 
     if (!password) {
-      throw new AppError('A senha é obrigatória!');
+      throw new AppError('A senha é obrigatória!', 401);
     }
 
     const user = await usersRepository.getUserByEmail(email);
 
     if (!user) {
-      throw new AppError('Email ou senha inválida!', 401);
+      throw new AppError('Email ou senha inválidos!', 401);
     }
 
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new AppError('Email ou senha inválida!', 401);
+      throw new AppError('Email ou senha inválidos!', 401);
     }
 
     const secret = process.env.SECRET;
