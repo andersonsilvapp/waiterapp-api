@@ -7,6 +7,7 @@ import { editProductController } from '../../../../modules/products/UseCases/edi
 import { editProductPriceController } from '../../../../modules/products/UseCases/editProductPrice/EditProductPriceController';
 import { editProductStatusController } from '../../../../modules/products/UseCases/editProductStatus/EditProductStatusController';
 import { listProductController } from '../../../../modules/products/UseCases/listProduct/ListProductController';
+import { viewProductController } from '../../../../modules/products/UseCases/viewProduct/ViewProductController';
 
 const upload = multer({
   storage: multer.diskStorage({
@@ -28,6 +29,8 @@ productsRoutes.post(
 );
 
 productsRoutes.get('/', listProductController.handle);
+
+productsRoutes.get('/:id', viewProductController.handle);
 
 productsRoutes.put(
   '/:productId',

@@ -9,6 +9,12 @@ class ProductsRepository {
     return products;
   }
 
+  async view(id: string) {
+    const product = await Product.findById(id);
+
+    return product;
+  }
+
   async create({
     name,
     description,
@@ -17,6 +23,7 @@ class ProductsRepository {
     category,
     ingredients,
   }: ICreateProductDTO) {
+    console.log(ingredients);
     const product = await Product.create({
       name,
       description,
